@@ -1,10 +1,14 @@
-sudo: required
-services:
+# We have to have super users permissions using the docker service
+sudo: required  
+# We need a copy of docker ready to go in the container that will travis run
+services:       
   - docker
 
+# before_install will run serious of commands before the test are run
 before_install:
   - docker build -t stephengrider/docker-react -f Dockerfile.dev .
 
+# script section is supposed to execute all the commands to run the test
 script:
   - docker run stephengrider/docker-react npm run test -- --coverage
 
