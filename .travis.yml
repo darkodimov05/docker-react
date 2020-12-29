@@ -1,3 +1,4 @@
+# TRAVIS CONFIG
 # We have to have super users permissions using the docker service
 sudo: required  
 # We need a copy of docker ready to go in the container that will travis run
